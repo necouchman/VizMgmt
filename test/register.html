@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Test Guest Registration</title>
+<script language=JavaScript>
+
+function checkForm(myForm) {
+	if(myForm.First.value == "" || myForm.First.value == "Enter First Name") {
+		alert('You must enter a first name.');
+		return false;
+	}
+	if(myForm.Last.value == "" || myForm.Last.value == "Enter Last Name") {
+		alert('You must enter a last name.');
+		return false;
+	}
+	if(myForm.Email.value == "Enter E-mail Address") {
+		myForm.Email.value = "";
+	}
+	if(myForm.Telephone.value == "Enter Phone Number") {
+		myForm.Telephone.value = "";
+	}
+	if(myForm.Mobile.value == "Enter Mobile Number") {
+		myForm.Mobile.value = "";
+	}
+	if(myForm.Company.value == "Enter Company") {
+		myForm.Company.value = "";
+	}
+	if(myForm.Department.value == "Enter Department") {
+		myForm.Department.value = "";
+	}
+	if(myForm.Address.value == "Enter Address") {
+		myForm.Address.value = "";
+	}
+	if(myForm.City.value == "Enter City") {
+		myForm.City.value = "";
+	}
+	if(myForm.State.value == "Enter State") {
+		myForm.State.value = "";
+	}
+	if(myForm.Zip.value == "Enter Postal Code") {
+		myForm.Zip.value = "";
+	}
+	if(myForm.Country.value == "Enter Country" || myForm.Country.value == "") {
+		alert('You must enter a country.')
+		return false;
+	}
+	return true;
+}
+
+</script>
+</head>
+<body>
+<form method=post action=/vms/rest.php/visitor/register onSubmit="return checkForm(this);">
+
+First Name: <input type=text name=First value="Enter First Name" onFocus="if(this.value == 'Enter First Name') this.value='';" /><br/>
+Last Name: <input type=text name=Last value="Enter Last Name" onFocus="if(this.value == 'Enter Last Name') this.value='';" /><br/>
+E-mail Address: <input type=text name=Email value="Enter E-mail Address" onFocus="if(this.value == 'Enter E-mail Address') this.value='';" /><br/>
+Phone Number: <input type=text name=Telephone value="Enter Phone Number" onFocus="if(this.value == 'Enter Phone Number') this.value='';" /><br/>
+Mobile Number: <input type=text name=Mobile value="Enter Mobile Number" onFocus="if(this.value == 'Enter Mobile Number') this.value='';" /><br/>
+Company: <input type=text name=Company value="Enter Company" onFocus="if(this.value == 'Enter Company') this.value='';" /><br/>
+Department: <input type=text name=Department value="Enter Department" onFocus="if(this.value == 'Enter Department') this.value='';" /><br/>
+Address: <input type=text name=Address value="Enter Address" onFocus="if(this.value == 'Enter Address') this.value='';" /><br/>
+City: <input type=text name=City value="Enter City" onFocus="if(this.value == 'Enter City') this.value='';" /><br/>
+State/Province: <input type=text name=State value="Enter State" onFocus="if(this.value == 'Enter State') this.value='';" /><br/>
+Zip Code: <input type=text name=Zip value="Enter Postal Code" onFocus="if(this.value == 'Enter Postal Code') this.value='';" /><br/>
+Country: <input type=text name=Country value="Enter Country" onFocus="if(this.value == 'Enter Country') this.value='';" /><br/>
+US Citizen: <input type=checkbox name=USCitizen /><br/>
+<input type=submit name=Register value=Register /><input type=reset name=Reset value=Reset />
+
+</form>
+</body>
+</html>

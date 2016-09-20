@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Test Guest Checkout</title>
+<script language=JavaScript>
+
+function checkForm(myForm) {
+	if(myForm.oid.value == "" || myForm.oid.value == "OID") {
+		alert('You must enter an OID.');
+		return false;
+	}
+	return true;
+}
+
+</script>
+</head>
+<body>
+<form method=post action=/vms/rest.php/visitor/checkout onSubmit="return checkForm(this);">
+
+OID: <input type=text name=oid value="OID" onFocus="if(this.value == 'OID') this.value='';" /><br>
+<input type=submit name=Verify value=Verify /><input type=reset name=Reset value=Reset />
+
+</form>
+</body>
+</html>

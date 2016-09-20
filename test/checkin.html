@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Test Guest Checkin</title>
+<script language=JavaScript>
+
+function checkForm(myForm) {
+	if(myForm.dn.value == "" || myForm.dn.value == "DN") {
+		alert('You must enter a DN name.');
+		return false;
+	}
+	return true;
+}
+
+</script>
+</head>
+<body>
+<form method=post action=/vms/rest.php/visitor/checkin onSubmit="return checkForm(this);">
+
+DN: <input type=text name=dn value="DN" onFocus="if(this.value == 'DN') this.value='';" /><br>
+<input type=submit name=Register value=Register /><input type=reset name=Reset value=Reset />
+
+</form>
+</body>
+</html>
